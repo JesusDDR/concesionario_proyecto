@@ -16,7 +16,7 @@ public class CocheDTO {
         this.precio = precio;
         this.anho = anho;
         this.kilometros = kilometros;
-        boolean disponible = true;
+        this.disponible = true;
     }
 
     public String getMarca() {

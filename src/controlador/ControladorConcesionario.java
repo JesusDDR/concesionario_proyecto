@@ -2,6 +2,7 @@ package controlador;
 
 import modelo.ClienteDTO;
 import modelo.CocheDTO;
+import modelo.Tmenu;
 import modelo.VentaDTO;
 import vista.VistaConcesionario;
 
@@ -102,7 +103,40 @@ public List<ClienteDTO> clientesPrueba() {
 
 
     public void run() {
+    while(true) {
+        Tmenu op = vista.Showmenu();
+        switch (op){
+            case ANADIR_COCHE:{
+//                vista.mensaje("pendiente realizar añadir");
+                coches.add(anhadirCoche());
+                break;
+            }
+            case MOSTRAR_COCHE:{
+                vista.mostrarCoche(coches);
+                break;
+            }
+            case BUSCAR_COCHE_MARCA:{
+                vista.mensaje("pendiente realizar busqueda por marca");
+            }
 
+        }
+    }
+    }
+
+    private CocheDTO anhadirCoche() {
+        CocheDTO cocheNuevo;
+        vista.mensaje("Indica la marca del coche.");
+        String marca = vista.entrarDatos();
+
+        String modelo = vista.entrarDatos();
+
+        String matricula = vista.entrarDatos().toUpperCase();
+        double precio = Double.parseDouble(vista.entrarDatos());
+        int ano = Integer.parseInt(vista.entrarDatos());
+        int km = Integer.parseInt(vista.entrarDatos());
+
+        cocheNuevo= new CocheDTO(marca, modelo, matricula, precio, ano, km);
+        return cocheNuevo;
     }
 }
 

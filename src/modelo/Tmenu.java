@@ -13,8 +13,8 @@ public enum Tmenu {
     BUSCAR_COCHE_ANHO("Buscar coche"),
     REGIATRAR_UN_NUEVO_CLIENTE("Mostar nuevo cliente"),
     REGISTRAR_UNA_VENTA("Mostrar coche involucrado"),
-    LISTAR_UNA_VENTA("Mostrar coche involucrado");
-
+    LISTAR_UNA_VENTA("Mostrar coche involucrado"),
+    SALIR("Salir");
     //Todos los atributos de un enumerado han de estar en el constructor.
     private String opText;
 
