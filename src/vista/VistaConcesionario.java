@@ -3,6 +3,7 @@ package vista;
 import modelo.CocheDTO;
 import modelo.Tmenu;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -44,14 +45,21 @@ public class VistaConcesionario {
     }
 
     public void mostrarCoche(List<CocheDTO> coches) {
+        if(coches.isEmpty()){
+            System.out.println("No se encontraron coches");
+        }
         for(CocheDTO coche : coches) {
-            if(coche.isDisponible()){
                 System.out.println(coche.getMarca() + " " +
-                        coche.getModelo());
-            }
+                        coche.getModelo() + " " +
+                        coche.getMatricula() + " " +
+                        coche.getPrecio() + " " +
+                        coche.getAnho() + " " +
+                        coche.getKilometros() + ".");
         }
         System.out.println();
     }
+
+
 
 }
 
